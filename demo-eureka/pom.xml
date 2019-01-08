@@ -8,7 +8,7 @@
 	<artifactId>demo-eureka</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
+<name>eureka</name>
 	<parent>
 		<groupId>springclouddemo.lijia.cn</groupId>
 		<artifactId>demo-root</artifactId>
@@ -71,6 +71,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<finalName>${project.name}</finalName>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

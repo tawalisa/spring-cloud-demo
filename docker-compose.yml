@@ -1,0 +1,37 @@
+version: '2.1'
+services:
+  config:
+    image: tawalisa/config
+    restart: always
+    volumes:
+      - ./demo-config/config:/config
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  eureka:
+    image: tawalisa/eureka
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+        
+  service:
+    image: tawalisa/service
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+  feign:
+    image: tawalisa/feign
+    restart: always
+    ports:
+      - 8080:8080
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+ 
